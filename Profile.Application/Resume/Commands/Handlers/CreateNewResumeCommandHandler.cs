@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Profile.Domain.Resume.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,13 @@ namespace Profile.Application.Resume.Commands.Handlers
 {
     public class CreateNewResumeCommandHandler : IRequestHandler<CreateNewResumeCommand, bool>
     {
+        private readonly IResumeRepository _resumeRepository;
+
+        public CreateNewResumeCommandHandler(IResumeRepository resumeRepository)
+        {
+            _resumeRepository = resumeRepository;
+        }
+
         public Task<bool> Handle(CreateNewResumeCommand request, CancellationToken cancellationToken)
         {
             var profile = new DomainModel.Profile(request.Name, request.Age, request.Description);
@@ -36,6 +44,8 @@ namespace Profile.Application.Resume.Commands.Handlers
             }
 
             var resume = new DomainModel.Resume(request.DocumentLanguage, profile, experiences, educations, contacts, request.Skills);
+
+            _resumeRepository.Create(resume);
 
             return Task.FromResult(true);
         }

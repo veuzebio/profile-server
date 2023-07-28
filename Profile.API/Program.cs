@@ -1,11 +1,9 @@
 using Profile.Application.Resume.Commands;
+using Profile.Domain.Resume.Interfaces;
 using Profile.Infra.Data;
-using System.Reflection;
+using Profile.Infra.Data.Repository.Resume;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
 
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining<CreateNewResumeCommand>());
 
@@ -16,10 +14,11 @@ builder.Services.AddRouting(opt => opt.LowercaseUrls = true);
 
 builder.Services.AddDbContext<ProfileDbContext>();
 
+builder.Services.AddScoped<IResumeRepository, ResumeRepository>();
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
