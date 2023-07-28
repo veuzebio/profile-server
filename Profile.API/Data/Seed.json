@@ -1,0 +1,100 @@
+{
+  "documentLanguage": "pt-BR",
+  "name": "Vitor Vieira Euzébio",
+  "age": 28,
+  "description": "Engenheiro de Software com experiência na elaboração e execução de projetos com equipes ágeis, utilizando metodologias como Scrum e Kanban para elevar a eficiência do processo entre equipes multidisciplinares. Colaboração no desenvolvimento de serviços distribuídos baseados em tecnologias .NET, aplicando princípios de desenvolvimento e padrões de projeto que atendam altas demandas. Criação de aplicações web modulares, funcionais e reativas, baseadas em frameworks Javascript.",
+  "educations": [
+    {
+      "institution": "FIAP São Paulo",
+      "degree": "MBA em Engenharia de Software",
+      "start": "2020-11-01",
+      "end": "2021-11-01"
+    },
+    {
+      "institution": "FATEC Sorocaba",
+      "degree": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "start": "2013-01-01",
+      "end": "2017-06-01"
+    },
+    {
+      "institution": "ETEC Fernando Prestes",
+      "degree": "Tecnico em Desenvolvimento Web",
+      "start": "2011-01-01",
+      "end": "2012-06-01"
+    },
+    {
+      "institution": "ETEC Fernando Prestes",
+      "degree": "Ensino Médio",
+      "start": "2010-01-01",
+      "end": "2012-06-01"
+    }
+  ],
+  "experiences": [
+    {
+      "company": "OPUS Software",
+      "role": "Engenheiro de Software",
+      "description": "Elaboração e desenvolvimento de soluções para o setor financeiro e alimentício. Utilizando Scrum e Kanban para orientar o desenvolvimento dentro de uma equipe multidisciplinar, gerando união de várias áreas do conhecimento em busca de transparência, melhor eficiência do processo e diminuição de possíveis lacunas. Atuando com as tecnologias .NET 6 utilizando a linguagem C# para desenvolvimento de APIs em microsserviços, junto a um sistema de distribuição automatizada de contêineres Docker rodando em Linux. Criação de aplicações web utilizando o framework Angular, aplicando estratégia de modularização via Webpack e também técnicas de PWA para criação de aplicativos.",
+      "start": "2019-04-01",
+      "end": "2023-07-01"
+    },
+    {
+      "company": "HBSIS",
+      "role": "Analista de Sistemas",
+      "description": "Construção de soluções para gerenciamento de rotas e rastreamento de veículos. Utilizando o Scrum para coletar métricas e manter o aperfeiçoamento contínuo da equipe ágil. Atuando tecnologias .NET Core utilizando a linguagem C# para desenvolvimento de serviços distribuídos, adotando o sistema de mensageria, padrão CQRs e utilização de ORMs para auxílio na manutenção de bancos de dados SQL e NoSQL. Desenvolvendo aplicações web responsivas com HTML, CSS e Javascript junto ao framework React.",
+      "start": "2018-05-01",
+      "end": "2019-04-01"
+    },
+    {
+      "company": "CECAM",
+      "role": "Analista de Sistemas",
+      "description": "Desenvolvimento de sistemas integrados para todos os setores da administração pública municipal. Colaboração na implementação da metodologia Scrum para a manutenção de processos ágeis, maior transparência nas métricas de desenvolvimento e roadmap das equipes. Atuando com tecnologias ASP.NET MVC para criação de aplicações robustas utilizando a estratégia de divisão em camadas, junto a SQL Server para manutenção de grandes estruturas de dados.",
+      "start": "2014-11-01",
+      "end": "2018-05-01"
+    },
+    {
+      "company": "Agiw Sistemas",
+      "role": "Analista de Sistemas",
+      "description": "Desenvolvimento de soluções para auxilio de análise e conversão de grande estrutura de dados de folha de pagamento e gerenciamento empresarial.",
+      "start": "2014-04-01",
+      "end": "2014-11-01"
+    },
+    {
+      "company": "Sodapop",
+      "role": "Desenvolvedor Web",
+      "description": "Desenvolvimento de aplicações web responsivas para diversos setores do mercado, utilizando estratégias de HTML, CSS e Javascript e implementação de e-commerce com auxílio da plataforma VTEX. ",
+      "start": "2013-04-01",
+      "end": "2013-09-01"
+    }
+  ],
+  "skills": [
+    "Javascript",
+    "C#",
+    "Angular",
+    "React",
+    ".NET",
+    "Docker",
+    "Git",
+    "SQL",
+    "NoSQL",
+    "Scrum",
+    "Kanban"
+  ],
+  "contacts": [
+    {
+      "name": "address",
+      "value": "Sorocaba - SP"
+    },
+    {
+      "name": "phone",
+      "value": "(15) 99647-4706"
+    },
+    {
+      "name": "email",
+      "value": "vitor.v.euzebio@gmail.com"
+    },
+    {
+      "name": "linkedin",
+      "value": "www.linkedin.com/in/veuzebio"
+    }
+  ]
+}

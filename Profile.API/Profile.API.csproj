@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+	<PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Profile.Application\Profile.Application.csproj" />
+    <ProjectReference Include="..\Profile.Domain\Profile.Domain.csproj" />
+    <ProjectReference Include="..\Profile.Infra.Data\Profile.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
