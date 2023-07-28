@@ -5,14 +5,21 @@ namespace Profile.Infra.Data.Repository.Resume
 {
     public class ResumeRepository : IResumeRepository
     {
+        private readonly ProfileDbContext _context;
+
+        public ResumeRepository(ProfileDbContext context)
+        {
+            _context = context;
+        }
+
         public void Create(DomainModel.Resume resume)
         {
-            Console.WriteLine("Created!");
+            _context.Resumes.Add(resume);
         }
 
         public DomainModel.Resume GetByLanguage(string language)
         {
-            throw new NotImplementedException();
+            return _context.Resumes.Where(x => x.Language == language).FirstOrDefault();
         }
     }
 }

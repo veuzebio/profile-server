@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Profile.Application.Resume.Commands;
+using Profile.Application.Resume.Queries;
 
 namespace Profile.API.Controllers
 {
@@ -16,9 +17,13 @@ namespace Profile.API.Controllers
         }
 
         [HttpGet, Route("resume")]
-        public IEnumerable<string> GetResume(string language = "pt-BR")
+        public IActionResult GetResume(string language = "pt-BR")
         {
-            return new string[] { "value1", "value2" };
+            var query = new GetResumeByLanguageQuery() { Language = language };
+
+            var resume = _mediator.Send(query);
+
+            return Ok(resume);
         }
 
         [HttpPost, Route("seed")]
