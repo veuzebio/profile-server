@@ -1,29 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using DomainModel = Profile.Domain.Resume.Models;
+using Profile.Domain.CharacterAggregate.Models;
 
 namespace Profile.Infra.Data
 {
     public class ProfileDbContext: DbContext
     {
-        public DbSet<DomainModel.Resume> Resumes { get; set; }
-        public DbSet<DomainModel.Profile> Profiles { get; set; }
-        public DbSet<DomainModel.Education> Educations { get; set; }
-        public DbSet<DomainModel.Experience> Experiences { get; set; }
-        public DbSet<DomainModel.Contact> Contacts { get; set; }
+        public DbSet<Character> Characters { get; set; }
+        public DbSet<Item> Items { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            modelBuilder
-                .Entity<DomainModel.Resume>()
-                .Property(e => e.Skills)
-                .HasConversion(
-                    v => string.Join(',', v),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries));
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            options.UseSqlite("Data Source=LocalDatabase.db");
+            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database=LocalDatabase;User Id=sa;Password=#sa123456;TrustServerCertificate=True");
+            //Integrated Security = True
         }
     }
 }
