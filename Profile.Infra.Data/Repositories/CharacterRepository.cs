@@ -12,15 +12,16 @@ namespace Profile.Infra.Data.Repositories
             _context = context;
         }
 
-        public void Create(Character character)
+        public async Task CreateAsync(Character character)
         {
             _context.Characters.Add(character);
-            _context.SaveChanges();
+
+            await _context.SaveChangesAsync();
         }
 
-        public Character GetById(Guid Id)
+        public async Task<Character> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            var result = _context.Characters.Find(Id);
+            var result = await _context.Characters.FindAsync(new object[] { id }, cancellationToken);
 
             if (result == null) throw new Exception("Character not found for provided id.");
 

@@ -17,21 +17,21 @@ namespace Profile.API.Controllers
         }
 
         [HttpGet, Route("{id}")]
-        public IActionResult GetById(Guid id)
+        public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var query = new GetCharacterByIdQuery() { Id = id };
 
-            var character = _mediator.Send(query);
+            var character = await _mediator.Send(query, cancellationToken);
 
             return Ok(character);
         }
 
         [HttpPost, Route("create")]
-        public IActionResult Create(CreateNewCharacterCommand command)
+        public async Task<IActionResult> Create(CreateNewCharacterCommand command)
         {
-            var id = _mediator.Send(command);
+            var id = await _mediator.Send(command);
  
-            return Created(nameof(GetById), new { Id = id });
+            return Created(nameof(GetByIdAsync), new { Id = id });
         }
     }
 }

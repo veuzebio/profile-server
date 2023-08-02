@@ -4,7 +4,7 @@ namespace Profile.Domain.CharacterAggregate.Interfaces
 {
     public interface ICharacterRepository
     {
-        public void Create(Character character);
-        public Character GetById(Guid Id);
+        public Task CreateAsync(Character character);
+        public Task<Character> GetByIdAsync(Guid id, CancellationToken cancellationToken);
     }
 }

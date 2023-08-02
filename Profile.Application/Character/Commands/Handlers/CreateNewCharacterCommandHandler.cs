@@ -13,7 +13,7 @@ namespace Profile.Application.Resume.Commands.Handlers
             _repository = repository;
         }
 
-        public Task<Guid> Handle(CreateNewCharacterCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateNewCharacterCommand request, CancellationToken cancellationToken)
         {
             var items = new List<Item>();
 
@@ -24,9 +24,9 @@ namespace Profile.Application.Resume.Commands.Handlers
 
             var character = new Character(request.Name, items);
             
-            _repository.Create(character);
+            await _repository.CreateAsync(character);
 
-            return Task.FromResult(character.Id);
+            return character.Id;
         }
     }
 }

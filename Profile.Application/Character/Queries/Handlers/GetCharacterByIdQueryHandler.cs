@@ -13,11 +13,9 @@ namespace Profile.Application.Resume.Queries.Handlers
             _repository = repository;
         }
 
-        public Task<Character> Handle(GetCharacterByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Character> Handle(GetCharacterByIdQuery request, CancellationToken cancellationToken)
         {
-            var character = _repository.GetById(request.Id);
-
-            return Task.FromResult(character);
+            return await _repository.GetByIdAsync(request.Id, cancellationToken);
         }
     }
 }
