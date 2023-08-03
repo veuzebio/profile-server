@@ -1,4 +1,5 @@
-﻿using Profile.Domain.CharacterAggregate.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Profile.Domain.CharacterAggregate.Interfaces;
 using Profile.Domain.CharacterAggregate.Models;
 
 namespace Profile.Infra.Data.Repositories
@@ -21,7 +22,10 @@ namespace Profile.Infra.Data.Repositories
 
         public async Task<Character> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            var result = await _context.Characters.FindAsync(new object[] { id }, cancellationToken);
+            var result = await _context
+                .Characters
+                .Include(c => c.Items)
+                .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
             if (result == null) throw new Exception("Character not found for provided id.");
 
