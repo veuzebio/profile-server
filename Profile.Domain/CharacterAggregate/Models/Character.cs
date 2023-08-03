@@ -20,6 +20,8 @@ namespace Profile.Domain.CharacterAggregate.Models
 
         public Character(string name, List<Item> items)
         {
+            if (string.IsNullOrEmpty(name)) throw new Exception("Name");
+
             Name = name;
             Items = items;
         }

@@ -2,7 +2,7 @@
 using Profile.Domain.CharacterAggregate.Interfaces;
 using Profile.Domain.CharacterAggregate.Models;
 
-namespace Profile.Application.Resume.Commands.Handlers
+namespace Profile.Application.CharacterApp.Commands.Handlers
 {
     public class CreateNewCharacterCommandHandler : IRequestHandler<CreateNewCharacterCommand, Guid>
     {

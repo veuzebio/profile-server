@@ -2,7 +2,7 @@
 using Profile.Domain.CharacterAggregate.Interfaces;
 using Profile.Domain.CharacterAggregate.Models;
 
-namespace Profile.Application.Resume.Queries.Handlers
+namespace Profile.Application.CharacterApp.Queries.Handlers
 {
     public class GetCharacterByIdQueryHandler : IRequestHandler<GetCharacterByIdQuery, Character>
     {

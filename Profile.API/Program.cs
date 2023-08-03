@@ -1,5 +1,6 @@
+using FluentValidation;
 using Microsoft.OpenApi.Models;
-using Profile.Application.Resume.Commands;
+using Profile.Application.CharacterApp.Commands;
 using Profile.Domain.CharacterAggregate.Interfaces;
 using Profile.Infra.Data;
 using Profile.Infra.Data.Repositories;
@@ -7,6 +8,8 @@ using Profile.Infra.Data.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblyContaining<CreateNewCharacterCommand>());
+
+ValidatorOptions.Global.LanguageManager.Enabled = false;
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

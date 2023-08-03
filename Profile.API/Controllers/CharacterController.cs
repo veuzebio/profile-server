@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Profile.Application.Resume.Commands;
-using Profile.Application.Resume.Queries;
+using Profile.Application.CharacterApp.Commands;
+using Profile.Application.CharacterApp.Queries;
 using Profile.Domain.CharacterAggregate.Models;
 using System.ComponentModel.DataAnnotations;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Profile.API.Controllers
 {
@@ -32,7 +33,10 @@ namespace Profile.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<Character>> GetByIdAsync([Required] Guid id, CancellationToken cancellationToken)
         {
+            if (id == Guid.Empty) return BadRequest("Id must not be empty.");
+
             var query = new GetCharacterByIdQuery() { Id = id };
+
             return await _mediator.Send(query, cancellationToken);
         }
 
@@ -45,6 +49,8 @@ namespace Profile.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Create(CreateNewCharacterCommand command)
         {
+            if (!command.IsValid()) return BadRequest(command.ErrorMessages);
+
             var id = await _mediator.Send(command);
  
             return Created(nameof(GetByIdAsync), new { Id = id });

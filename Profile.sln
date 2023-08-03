@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profile.Infra.Data", "Profi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profile.Application", "Profile.Application\Profile.Application.csproj", "{21D61579-249C-40D7-B12D-A46D1B4A13B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{27E61E66-1B5F-4442-A72D-1CB4980792A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profile.Domain.Tests", "Tests\Profile.Domain.Tests\Profile.Domain.Tests.csproj", "{886F9B71-029E-43F1-AE92-96EC00E22F83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{21D61579-249C-40D7-B12D-A46D1B4A13B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D61579-249C-40D7-B12D-A46D1B4A13B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D61579-249C-40D7-B12D-A46D1B4A13B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886F9B71-029E-43F1-AE92-96EC00E22F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886F9B71-029E-43F1-AE92-96EC00E22F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886F9B71-029E-43F1-AE92-96EC00E22F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886F9B71-029E-43F1-AE92-96EC00E22F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{886F9B71-029E-43F1-AE92-96EC00E22F83} = {27E61E66-1B5F-4442-A72D-1CB4980792A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {644FF876-DB4B-47E0-8C09-15EBEF72996F}

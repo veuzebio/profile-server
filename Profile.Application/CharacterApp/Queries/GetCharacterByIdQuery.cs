@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Profile.Domain.CharacterAggregate.Models;
 
-namespace Profile.Application.Resume.Queries
+namespace Profile.Application.CharacterApp.Queries
 {
     /// <summary>
     /// Query with the information needed to get a specific character.

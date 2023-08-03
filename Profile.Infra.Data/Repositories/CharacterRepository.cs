@@ -25,6 +25,7 @@ namespace Profile.Infra.Data.Repositories
             var result = await _context
                 .Characters
                 .Include(c => c.Items)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
             if (result == null) throw new Exception("Character not found for provided id.");
