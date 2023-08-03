@@ -13,6 +13,12 @@ namespace Profile.Application.Resume.Commands.Handlers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Handles creating a new character and saving it in the repository.
+        /// </summary>
+        /// <param name="request">Information needed to create a new character.</param>
+        /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
+        /// <returns>The Id of the created <see cref="Character">character</see>.</returns>
         public async Task<Guid> Handle(CreateNewCharacterCommand request, CancellationToken cancellationToken)
         {
             var items = new List<Item>();

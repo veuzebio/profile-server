@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using Profile.Application.Resume.Commands;
 using Profile.Domain.CharacterAggregate.Interfaces;
 using Profile.Infra.Data;
@@ -9,7 +10,20 @@ builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblyContain
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",
+        new OpenApiInfo
+        {
+            Title = "Profile API - V1",
+            Version = "v1"
+        }
+     );
+
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Profile.API.xml"), true);
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Profile.Application.xml"));
+});
+
 builder.Services.AddRouting(opt => opt.LowercaseUrls = true);
 
 builder.Services.AddDbContext<ProfileDbContext>();
