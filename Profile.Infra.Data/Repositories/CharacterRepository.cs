@@ -32,5 +32,12 @@ namespace Profile.Infra.Data.Repositories
 
             return result;
         }
+
+        public async Task<List<Character>> GetListAsync()
+        {
+            var result = await _context.Characters.ToListAsync();
+
+            return result;
+        }
     }
 }

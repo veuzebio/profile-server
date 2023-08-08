@@ -15,6 +15,7 @@ namespace Profile.Domain.CharacterAggregate.Models
 
         public Item(string name)
         {
+            Id = Guid.NewGuid();
             Name = name;
         }
     }

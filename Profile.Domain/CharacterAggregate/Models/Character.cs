@@ -22,6 +22,7 @@ namespace Profile.Domain.CharacterAggregate.Models
         {
             if (string.IsNullOrEmpty(name)) throw new Exception("Name");
 
+            Id = Guid.NewGuid();
             Name = name;
             Items = items;
         }

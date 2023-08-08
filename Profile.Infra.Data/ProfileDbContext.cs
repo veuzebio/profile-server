@@ -5,8 +5,8 @@ namespace Profile.Infra.Data
 {
     public class ProfileDbContext: DbContext
     {
-        public DbSet<Character> Characters { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public virtual DbSet<Character> Characters { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
